@@ -1,0 +1,35 @@
+.required{
+    color: red;
+}
+
+.sign-out{
+    position: absolute;
+    top:0.5rem;
+    right: 0;
+}
+
+.enroll{
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+}
+.btn-outline-primary{
+    margin-left: 8REM;
+}
+
+@media(max-width:576px){
+    .sign-out{
+        position: relative;
+        top:0;
+        left: 13rem;
+    }
+    
+    .btn-outline-primary{
+        margin-left: 0;
+    }
+    .enroll{
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+}

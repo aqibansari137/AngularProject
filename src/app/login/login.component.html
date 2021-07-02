@@ -1,0 +1,30 @@
+<h2 class="text-center mt-3 mb-0">LOGIN</h2>
+<div class="row login">
+  <div class="card text-center m-auto mt-4 col-sm-12 p-0 pb-4">
+    <img src="../../assets/castle.jpg" class="card-img-top" alt="Unable to load">
+    <div class="card-body">
+      <form [formGroup]="nglog">
+        <div class="row">
+
+          <label class="col-sm-4 col-form-label">
+            USERNAME
+          </label>
+          <div class="col-sm-8 mb-3">
+
+            <input type="text" class="form-control" placeholder="Enter your username" formControlName="username">
+          </div>
+          <label class="col-sm-4 col-form-label">
+            PASSWORD
+          </label>
+          <div class="col-sm-8 mb-3">
+
+            <input type="password" class="form-control" placeholder="Enter your password" formControlName="password">
+          </div>
+        </div>
+        <button class="btn btn-primary my-3" (click)=loginCheck()>LOGIN</button>
+        <button class="btn btn-outline-primary my-3 offset-1" type="reset">RESET</button>
+      </form>
+      <a class="skip" (click)="skipLogin()">Skip login</a>
+    </div>
+  </div>
+</div>

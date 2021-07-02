@@ -1,0 +1,23 @@
+.item1{
+    font-size: 12rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.item2{
+    font-size: 5rem;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+@media(max-width:576px){
+    .item1{
+        font-size: 8rem;
+    }
+    .item2{
+        font-size: 2rem;
+    }
+}

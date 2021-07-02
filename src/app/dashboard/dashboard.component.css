@@ -1,0 +1,12 @@
+.dashboard{
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+@media (max-width:576px){
+    .dashboard{
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+}

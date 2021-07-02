@@ -1,0 +1,67 @@
+<div class="enroll position-relative">
+    <h1 class="text-center my-4">{{courseHeading|uppercase}}</h1>
+    <button class="btn btn-outline-danger sign-out" (click)="signOut()">Sign Out</button>
+    <form [formGroup]="courseForm">
+        <div class="row">
+            <label class="col-sm-2 col-form-label"> FIRST NAME<span class="required">*</span></label>
+            <div class="col-sm-10 mb-3">
+                <input type="text" class="form-control" placeholder="Enter your First Name" formControlName="fname">
+                <span *ngIf="courseForm.controls.fname.errors?.required && courseForm.controls.fname.touched"
+                    class="required">First name is required</span>
+                <span *ngIf="courseForm.controls.fname.errors?.maxlength" class="required">maxlength should be 30</span>
+                <span *ngIf="courseForm.controls.fname.errors?.pattern" class="required">Numbers not allowed</span>
+            </div>
+            <label class="col-sm-2 col-form-label"> LAST NAME<span class="required">*</span></label>
+            <div class="col-sm-10 mb-3">
+                <input type="text" class="form-control" placeholder="Enter your Last Name" formControlName="lname">
+                <span *ngIf="courseForm.controls.lname.errors?.required && courseForm.controls.lname.touched"
+                    class="required">Last name is required</span>
+                <span *ngIf="courseForm.controls.lname.errors?.maxlength" class="required">maxlength should be 30</span>
+                <span *ngIf="courseForm.controls.lname.errors?.pattern" class="required">Numbers not allowed</span>
+            </div>
+            <label class="col-sm-2 col-form-label"> EMAIL<span class="required">*</span></label>
+            <div class="col-sm-10 mb-3">
+                <input type="email" class="form-control" placeholder="Enter your Email" formControlName="email">
+                <span *ngIf="courseForm.controls.email.errors?.required && courseForm.controls.email.touched"
+                class="required">Email is required</span>
+                <span *ngIf="courseForm.controls.email.errors?.email" class="required">Enter a valid email</span>
+            </div>
+            <label class="col-sm-2 col-form-label"> MOBILE NO.<span class="required">*</span></label>
+            <div class="col-sm-10 mb-3">
+                <input type="text" class="form-control" placeholder="Enter your Mobile No." formControlName="mobile">
+                <span *ngIf="courseForm.controls.mobile.invalid && courseForm.controls.mobile.touched"
+                class="required">Mobile No. is required(10 digits)</span>
+                <span *ngIf="courseForm.controls.mobile.errors?.pattern" class="required">Numbers only</span>
+            </div>
+            <label class="col-sm-2 col-form-label"> GENDER<span class="required">*</span></label>
+            <div class="col-sm-10 mb-3">
+                <input class="form-check-inputs me-3" type="radio" value="Male" name="gender"
+                    formControlName="gender">Male
+                <input class="form-check-inputs mx-3" type="radio" value="Female" name="gender"
+                    formControlName="gender">Female
+            </div>
+            <label class="col-sm-2 col-form-label"> OCCUPATION<span class="required">*</span></label>
+            <div class="col-sm-10 mb-3">
+                <select class="form-control" aria-label="Default select example" (change)="changeStatus($event.target)" formControlName="occupation">
+                    <option value="Student">Student</option>
+                    <option value="Service">Service</option>
+                    <option value="Business">Business</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+
+        </div>
+        <div *ngIf="other_Status" class="row">
+            <label class="col-sm-2 col-form-label"> Any Other Occupation<span class="required">*</span></label>
+            <div class="col-sm-10 mb-3">
+                <input class="form-control" type="text" formControlName="other">
+                <span *ngIf="courseForm.controls.other.errors?.required && courseForm.controls.other.touched"
+                    class="required">Occupation required</span>
+                <span *ngIf="courseForm.controls.other.errors?.maxlength" class="required">maxlength should be 50</span>
+            </div>
+        </div>
+        <button class="btn btn-primary col-sm-1" [disabled]="courseForm.invalid"
+            (click)="onSubmission()">SUBMIT</button>
+        <button type="reset" class="btn btn-outline-primary col-sm-1" (click)="changeStatus('reset')">RESET</button>
+    </form>
+</div>

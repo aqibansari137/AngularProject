@@ -1,0 +1,30 @@
+.login{
+    margin-bottom: 2rem;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+.skip{
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+@media(max-width:576px){
+    label{
+        text-align: left;
+        margin-left: 0.5rem;
+    }
+    
+    .card-body{
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+    .card{
+        border: none;
+    }
+    .login{
+        padding:0;
+    }
+
+}
